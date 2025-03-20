@@ -5,7 +5,8 @@
         public enum Direction
         {
             North,
-            West
+            West,
+            East
         }
 
 
@@ -18,11 +19,16 @@
             this.direction = direction;
         }
 
-
         public void TurnLeft()
         {
-
-            direction = Direction.West;
+            if (direction == Direction.East)
+            {
+                direction = Direction.North;
+            }
+            else
+            {
+                direction = Direction.West;
+            }
 
         }
     }

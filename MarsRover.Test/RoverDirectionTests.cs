@@ -5,6 +5,7 @@ namespace MarsRover.Test
     public class RoverDirectionTests
     {
         [TestCase(Direction.North, Direction.West)]
+        [TestCase(Direction.East, Direction.North)]
 
         public void TurnLeftFromGivenDirection(Direction direction, Direction expectedDirection)
         {
