@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MarsRover
+﻿namespace MarsRover
 {
     public class MarsRover
     {
@@ -14,13 +8,22 @@ namespace MarsRover
 
         }
 
+        public int Y { get; set; }
 
         public Direction direction;
 
         public MarsRover(int x, int y, Direction direction)
         {
-
+            Y = y;
             this.direction = direction;
+        }
+
+        public void MoveForward()
+        {
+            if (direction == Direction.North)
+            {
+                Y++;
+            }
         }
 
 
