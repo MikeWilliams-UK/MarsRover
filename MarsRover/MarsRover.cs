@@ -5,7 +5,8 @@
         public enum Direction
         {
             North,
-            West
+            West,
+            South
         }
 
         public int Y { get; set; }
@@ -24,6 +25,10 @@
             if (direction == Direction.North)
             {
                 Y++;
+            }
+            if (direction == Direction.South)
+            {
+                Y--;
             }
         }
 

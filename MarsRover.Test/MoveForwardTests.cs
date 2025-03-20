@@ -11,4 +11,13 @@ public  class MoveForwardTests
 
         Assert.That(rover.Y, Is.EqualTo(2));
     }
+
+    [Test]
+    public void MoveForwardFacingSouth()
+    {
+        MarsRover rover = new MarsRover(1, 2, MarsRover.Direction.South);
+        rover.MoveForward();
+
+        Assert.That(rover.Y, Is.EqualTo(1));
+    }
 }
