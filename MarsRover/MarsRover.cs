@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MarsRover
+﻿namespace MarsRover
 {
     public class MarsRover
     {
         public enum Direction
         {
-            North
-
+            North,
+            West
         }
+
 
 
         public Direction direction;
@@ -24,5 +19,11 @@ namespace MarsRover
         }
 
 
+        public void TurnLeft()
+        {
+
+            direction = Direction.West;
+
+        }
     }
 }
