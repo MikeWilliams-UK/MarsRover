@@ -4,11 +4,12 @@
     {
         public enum Direction
         {
-            North
-
+            North,
+            West
         }
 
         public int Y { get; set; }
+
 
         public Direction direction;
 
@@ -27,5 +28,11 @@
         }
 
 
+        public void TurnLeft()
+        {
+
+            direction = Direction.West;
+
+        }
     }
 }
