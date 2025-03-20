@@ -6,7 +6,8 @@
         {
             North,
             West,
-            East
+            East,
+            South
         }
 
         public int Y { get; set; }
@@ -25,6 +26,10 @@
             if (direction == Direction.North)
             {
                 Y++;
+            }
+            if (direction == Direction.South)
+            {
+                Y--;
             }
         }
 
