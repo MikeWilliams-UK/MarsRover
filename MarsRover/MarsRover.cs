@@ -10,14 +10,14 @@
             South
         }
 
-        public int Y { get; set; }
+        public int yPosition { get; set; }
 
 
         public Direction direction;
 
         public MarsRover(int x, int y, Direction direction)
         {
-            Y = y;
+            yPosition = y;
             this.direction = direction;
         }
 
@@ -25,11 +25,11 @@
         {
             if (direction == Direction.North)
             {
-                Y++;
+                yPosition++;
             }
             if (direction == Direction.South)
             {
-                Y--;
+                yPosition--;
             }
         }
 
