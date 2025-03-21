@@ -23,6 +23,7 @@
                 Console.WriteLine("Enter Command:");
                 var commands = Console.ReadLine()?.ToUpper();
 
+                _rover.ExecuteCommands(commands);
                 if (commands.Contains("X"))
                 {
                     break;

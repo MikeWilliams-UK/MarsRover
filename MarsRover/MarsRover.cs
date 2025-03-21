@@ -66,5 +66,18 @@
                 direction = Direction.North;
             }
         }
+
+        public void ExecuteCommands(string commands)
+        {
+            foreach (var instruction in commands.ToCharArray())
+            {
+                switch (instruction)
+                {
+                    case 'F':
+                        MoveForward();
+                        break;
+                }
+            }
+        }
     }
 }
