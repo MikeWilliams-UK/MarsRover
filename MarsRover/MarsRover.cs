@@ -22,7 +22,7 @@
             CurrentDirection = currentDirection;
         }
 
-        public void MoveForward()
+        internal void MoveForward()
         {
             switch (CurrentDirection)
             {
@@ -44,7 +44,29 @@
             }
         }
 
-        public void TurnLeft()
+        internal void MoveBackward()
+        {
+            switch (CurrentDirection)
+            {
+                case Direction.North:
+                    PositionY--;
+                    break;
+
+                case Direction.East:
+                    PositionX--;
+                    break;
+
+                case Direction.South:
+                    PositionY++;
+                    break;
+
+                case Direction.West:
+                    PositionX++;
+                    break;
+            }
+        }
+
+        internal void TurnLeft()
         {
             CurrentDirection = CurrentDirection switch
             {
@@ -56,7 +78,7 @@
             };
         }
 
-        public void TurnRight()
+        internal void TurnRight()
         {
             CurrentDirection = CurrentDirection switch
             {
@@ -76,6 +98,10 @@
                 {
                     case 'F':
                         MoveForward();
+                        break;
+
+                    case 'B':
+                        MoveBackward();
                         break;
 
                     case 'L':
