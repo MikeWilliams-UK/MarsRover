@@ -35,13 +35,13 @@ jobs:
       working-directory: MarsRover
       run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true -o publish
 
-    - name: List files in the publish folder
+    - name: List files
       run: |
-        ls MarsRover/MarsRover/MarsRover/publish
+        ls -alR ${{ github.workspace }}
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: mars-rover
-        path: MarsRover/MarsRover/MarsRover/publish/*
+        path: */publish/*
         retention-days: 7
