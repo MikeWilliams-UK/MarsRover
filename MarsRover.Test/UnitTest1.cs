@@ -2,19 +2,16 @@ namespace MarsRover.Test
 {
     public class Tests
     {
+        private MarsRover _rover;
+
         [SetUp]
         public void Setup()
         {
+            // Nothing to do here yet
         }
 
         [Test]
-        public void Test1()
-        {
-            Assert.Pass();
-        }
-
-        [Test]
-        public void TestCreateInitialLocation()
+        public void CreateInitialLocation()
         {
             var marsRover = new MarsRover(1, 1, MarsRover.Direction.North);
 
