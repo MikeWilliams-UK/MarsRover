@@ -32,11 +32,18 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
     - name: Publish executable
-      run: dotnet publish -c Release -r win-x64 -o publish
+      run: dotnet publish -c Release -r win-x64 --self-contained true \
+       -p:PublishSingleFile=true \
+       -p:EnableCompressionInSingleFile=true \
+       -p:IncludeNativeLibrariesForSelfExtract=false \
+       -p:PublishTrimmed=true \
+       -p:TrimMode=Full \
+       -p:EnableReadyToRun=false \
+       -o publish
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: dotnet-executable
+        name: mars-rover
         path: publish/*
         retention-days: 7
