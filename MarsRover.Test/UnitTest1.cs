@@ -18,7 +18,7 @@ namespace MarsRover.Test
         {
             var marsRover = new MarsRover(1, 1, MarsRover.Direction.North);
 
-            NUnit.Framework.Assert.That(marsRover.direction, Is.EqualTo(MarsRover.Direction.North));
+            Assert.That(marsRover.CurrentDirection, Is.EqualTo(MarsRover.Direction.North));
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace MarsRover.Test
             var rover = new MarsRover(1, 1, MarsRover.Direction.North);
             rover.TurnRight();
 
-            Assert.That(rover.direction, Is.EqualTo(MarsRover.Direction.East));
+            Assert.That(rover.CurrentDirection, Is.EqualTo(MarsRover.Direction.East));
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace MarsRover.Test
             var rover = new MarsRover(1, 1, MarsRover.Direction.East);
             rover.TurnRight();
 
-            Assert.That(rover.direction, Is.EqualTo(MarsRover.Direction.South));
+            Assert.That(rover.CurrentDirection, Is.EqualTo(MarsRover.Direction.South));
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace MarsRover.Test
             var rover = new MarsRover(1, 1, MarsRover.Direction.South);
             rover.TurnRight();
 
-            Assert.That(rover.direction, Is.EqualTo(MarsRover.Direction.West));
+            Assert.That(rover.CurrentDirection, Is.EqualTo(MarsRover.Direction.West));
         }
 
         [Test]
@@ -54,7 +54,7 @@ namespace MarsRover.Test
             var rover = new MarsRover(1, 1, MarsRover.Direction.West);
             rover.TurnRight();
 
-            Assert.That(rover.direction, Is.EqualTo(MarsRover.Direction.North));
+            Assert.That(rover.CurrentDirection, Is.EqualTo(MarsRover.Direction.North));
         }
     }
 }

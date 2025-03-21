@@ -35,7 +35,7 @@
             }
             else
             {
-                Console.WriteLine("Invalid Command Line arguments X Y Direction - i.e. 1 1 n");
+                Console.WriteLine("Invalid Command Line arguments PositionX PositionY Direction - i.e. 1 1 n");
             }
         }
     }

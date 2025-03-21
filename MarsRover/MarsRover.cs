@@ -10,74 +10,92 @@
             South
         }
 
-        public int Y { get; set; }
+        public int PositionX { get; set; }
+        public int PositionY { get; set; }
 
+        public Direction CurrentDirection;
 
-        public Direction direction;
-
-        public MarsRover(int x, int y, Direction direction)
+        public MarsRover(int positionX, int positionY, Direction currentDirection)
         {
-            Y = y;
-            this.direction = direction;
+            PositionX = positionX;
+            PositionY = positionY;
+            CurrentDirection = currentDirection;
         }
 
         public void MoveForward()
         {
-            if (direction == Direction.North)
+            switch (CurrentDirection)
             {
-                Y++;
-            }
-            if (direction == Direction.South)
-            {
-                Y--;
+                case Direction.North:
+                    PositionY++;
+                    break;
+
+                case Direction.East:
+                    PositionX++;
+                    break;
+
+                case Direction.South:
+                    PositionY--;
+                    break;
+
+                case Direction.West:
+                    PositionX--;
+                    break;
             }
         }
 
-
         public void TurnLeft()
         {
-            if (direction == Direction.East)
+            CurrentDirection = CurrentDirection switch
             {
-                direction = Direction.North;
-            }
-            else
-            {
-                direction = Direction.West;
-            }
-
+                Direction.North => Direction.West,
+                Direction.East => Direction.North,
+                Direction.South => Direction.East,
+                Direction.West => Direction.South,
+                _ => CurrentDirection
+            };
         }
 
         public void TurnRight()
         {
-            if (direction == Direction.North)
+            CurrentDirection = CurrentDirection switch
             {
-                direction = Direction.East;
-            }
-            else if (direction == Direction.East)
-            {
-                direction = Direction.South;
-            }
-            else if (direction == Direction.South)
-            {
-                direction = Direction.West;
-            }
-            else if (direction == Direction.West)
-            {
-                direction = Direction.North;
-            }
+                Direction.North => Direction.East,
+                Direction.East => Direction.South,
+                Direction.South => Direction.West,
+                Direction.West => Direction.North,
+                _ => CurrentDirection
+            };
         }
 
         public void ExecuteCommands(string commands)
         {
-            foreach (var instruction in commands.ToCharArray())
+            foreach (var command in commands)
             {
-                switch (instruction)
+                switch (command)
                 {
                     case 'F':
                         MoveForward();
                         break;
+
+                    case 'L':
+                        TurnLeft();
+                        break;
+
+                    case 'R':
+                        TurnRight();
+                        break;
+
+                    case 'Q':
+                        ShowPostion();
+                        break;
                 }
             }
+        }
+
+        private void ShowPostion()
+        {
+            Console.WriteLine($"Rover at {PositionX}, {PositionY} facing {CurrentDirection}");
         }
     }
 }

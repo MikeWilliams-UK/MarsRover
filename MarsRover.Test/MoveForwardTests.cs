@@ -1,7 +1,7 @@
 ﻿namespace MarsRover.Test;
 
 [TestFixture]
-public  class MoveForwardTests
+public class MoveForwardTests
 {
     [Test]
     public void MoveForwardFacingNorth()
@@ -9,7 +9,7 @@ public  class MoveForwardTests
         MarsRover rover = new MarsRover(1, 1, MarsRover.Direction.North);
         rover.MoveForward();
 
-        Assert.That(rover.Y, Is.EqualTo(2));
+        Assert.That(rover.PositionY, Is.EqualTo(2));
     }
 
     [Test]
@@ -18,6 +18,6 @@ public  class MoveForwardTests
         MarsRover rover = new MarsRover(1, 2, MarsRover.Direction.South);
         rover.MoveForward();
 
-        Assert.That(rover.Y, Is.EqualTo(1));
+        Assert.That(rover.PositionY, Is.EqualTo(1));
     }
 }
