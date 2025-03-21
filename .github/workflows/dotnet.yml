@@ -37,11 +37,11 @@ jobs:
 
     - name: List files in the publish folder
       run: |
-        ls -al MarsRover/MarsRover/publish
+        ls MarsRover/bin/Release/net8.0/win-x64/publish
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: mars-rover
-        path: MarsRover/MarsRover/publish/*
+        path: MarsRover/bin/Release/net8.0/win-x64/publish/*
         retention-days: 7
