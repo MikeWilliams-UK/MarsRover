@@ -32,13 +32,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
     - name: Publish executable
-      run: dotnet publish MarsRover/MarsRover.csproj -c Release -r win-x64 --self-contained true \
-       -p:PublishSingleFile=true \
-       -p:IncludeNativeLibrariesForSelfExtract=false \
-       -p:EnableCompressionInSingleFile=true \
-       -p:PublishTrimmed=false \
-       -p:UseAppHost=true \
-       -o publish
+      run: dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
