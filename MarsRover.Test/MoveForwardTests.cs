@@ -6,7 +6,7 @@ public class MoveForwardTests
     [Test]
     public void MoveForwardFacingNorth()
     {
-        var rover = new MarsRover(1, 1, MarsRover.Direction.North);
+        var rover = new MarsRover(1, 1, Direction.North);
         rover.MoveForward();
 
         Assert.That(rover.PositionX, Is.EqualTo(1));
@@ -16,7 +16,7 @@ public class MoveForwardTests
     [Test]
     public void MoveForwardFacingSouth()
     {
-        var rover = new MarsRover(1, 2, MarsRover.Direction.South);
+        var rover = new MarsRover(1, 2, Direction.South);
         rover.MoveForward();
 
         Assert.That(rover.PositionX, Is.EqualTo(1));

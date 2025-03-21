@@ -2,8 +2,6 @@ namespace MarsRover.Test
 {
     public class Tests
     {
-        private MarsRover _rover;
-
         [SetUp]
         public void Setup()
         {
@@ -13,45 +11,45 @@ namespace MarsRover.Test
         [Test]
         public void CreateInitialLocation()
         {
-            var marsRover = new MarsRover(1, 1, MarsRover.Direction.North);
+            var marsRover = new MarsRover(1, 1, Direction.North);
 
-            Assert.That(marsRover.CurrentDirection, Is.EqualTo(MarsRover.Direction.North));
+            Assert.That(marsRover.CurrentDirection, Is.EqualTo(Direction.North));
         }
 
         [Test]
         public void RoverFacingNorthTurnsRightToEast()
         {
-            var rover = new MarsRover(1, 1, MarsRover.Direction.North);
+            var rover = new MarsRover(1, 1, Direction.North);
             rover.TurnRight();
 
-            Assert.That(rover.CurrentDirection, Is.EqualTo(MarsRover.Direction.East));
+            Assert.That(rover.CurrentDirection, Is.EqualTo(Direction.East));
         }
 
         [Test]
         public void RoverFacingEastTurnsRightToSouth()
         {
-            var rover = new MarsRover(1, 1, MarsRover.Direction.East);
+            var rover = new MarsRover(1, 1, Direction.East);
             rover.TurnRight();
 
-            Assert.That(rover.CurrentDirection, Is.EqualTo(MarsRover.Direction.South));
+            Assert.That(rover.CurrentDirection, Is.EqualTo(Direction.South));
         }
 
         [Test]
         public void RoverFacingSouthTurnsRightToWest()
         {
-            var rover = new MarsRover(1, 1, MarsRover.Direction.South);
+            var rover = new MarsRover(1, 1, Direction.South);
             rover.TurnRight();
 
-            Assert.That(rover.CurrentDirection, Is.EqualTo(MarsRover.Direction.West));
+            Assert.That(rover.CurrentDirection, Is.EqualTo(Direction.West));
         }
 
         [Test]
         public void RoverFacingWestTurnsRightToNorth()
         {
-            var rover = new MarsRover(1, 1, MarsRover.Direction.West);
+            var rover = new MarsRover(1, 1, Direction.West);
             rover.TurnRight();
 
-            Assert.That(rover.CurrentDirection, Is.EqualTo(MarsRover.Direction.North));
+            Assert.That(rover.CurrentDirection, Is.EqualTo(Direction.North));
         }
     }
 }

@@ -8,11 +8,11 @@
         {
             if (args.Length == 3)
             {
-                var direction = MarsRover.Direction.North;
+                var direction = Direction.North;
                 switch (args[2].ToUpper())
                 {
                     case "N":
-                        direction = MarsRover.Direction.North;
+                        direction = Direction.North;
                         break;
                 }
                 _rover = new MarsRover(int.Parse(args[0]), int.Parse(args[1]), direction);

@@ -1,6 +1,4 @@
-﻿using static MarsRover.MarsRover;
-
-namespace MarsRover.Test
+﻿namespace MarsRover.Test
 {
     public class RoverDirectionTests
     {

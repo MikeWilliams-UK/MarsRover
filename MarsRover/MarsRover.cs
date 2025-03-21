@@ -2,14 +2,6 @@
 {
     public class MarsRover
     {
-        public enum Direction
-        {
-            North,
-            West,
-            East,
-            South
-        }
-
         internal int PositionX { get; set; }
         internal int PositionY { get; set; }
 
@@ -20,6 +12,35 @@
             PositionX = positionX;
             PositionY = positionY;
             CurrentDirection = currentDirection;
+        }
+
+        public void ExecuteCommands(string commands)
+        {
+            foreach (var command in commands)
+            {
+                switch (command)
+                {
+                    case 'F':
+                        MoveForward();
+                        break;
+
+                    case 'B':
+                        MoveBackward();
+                        break;
+
+                    case 'L':
+                        TurnLeft();
+                        break;
+
+                    case 'R':
+                        TurnRight();
+                        break;
+
+                    case 'Q':
+                        ShowPosition();
+                        break;
+                }
+            }
         }
 
         internal void MoveForward()
@@ -90,38 +111,11 @@
             };
         }
 
-        public void ExecuteCommands(string commands)
+        private void ShowPosition()
         {
-            foreach (var command in commands)
-            {
-                switch (command)
-                {
-                    case 'F':
-                        MoveForward();
-                        break;
-
-                    case 'B':
-                        MoveBackward();
-                        break;
-
-                    case 'L':
-                        TurnLeft();
-                        break;
-
-                    case 'R':
-                        TurnRight();
-                        break;
-
-                    case 'Q':
-                        ShowPostion();
-                        break;
-                }
-            }
-        }
-
-        private void ShowPostion()
-        {
-            Console.WriteLine($"Rover at {PositionX}, {PositionY} facing {CurrentDirection}");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"  Rover at {PositionX}, {PositionY} facing {CurrentDirection}");
+            Console.ResetColor();
         }
     }
 }
