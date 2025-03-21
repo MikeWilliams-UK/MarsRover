@@ -32,7 +32,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
     - name: Publish executable
-      run: dotnet publish -c Release -r win-x64 --self-contained true \
+      run: dotnet publish MarsRover/MarsRover.csproj -c Release -r win-x64 --self-contained true \
        -p:PublishSingleFile=true \
        -p:EnableCompressionInSingleFile=true \
        -p:IncludeNativeLibrariesForSelfExtract=false \
