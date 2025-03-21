@@ -4,7 +4,7 @@
     {
         private static MarsRover? _rover;
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             if (args.Length == 3)
             {
@@ -16,18 +16,26 @@
                         break;
                 }
                 _rover = new MarsRover(int.Parse(args[0]), int.Parse(args[1]), direction);
-            }
 
-            while (true)
-            {
-                Console.WriteLine("Enter Command:");
-                var commands = Console.ReadLine()?.ToUpper();
-
-                _rover.ExecuteCommands(commands);
-                if (commands.Contains("X"))
+                while (true)
                 {
-                    break;
+                    Console.WriteLine("Enter Command(s):");
+
+                    var commands = Console.ReadLine()?.ToUpper();
+
+                    if (!string.IsNullOrEmpty(commands))
+                    {
+                        _rover.ExecuteCommands(commands);
+                        if (commands.Contains("X"))
+                        {
+                            break;
+                        }
+                    }
                 }
+            }
+            else
+            {
+                Console.WriteLine("Invalid Command Line arguments X Y Direction - i.e. 1 1 n");
             }
         }
     }
