@@ -10,10 +10,10 @@
             South
         }
 
-        public int PositionX { get; set; }
-        public int PositionY { get; set; }
+        internal int PositionX { get; set; }
+        internal int PositionY { get; set; }
 
-        public Direction CurrentDirection;
+        internal Direction CurrentDirection;
 
         public MarsRover(int positionX, int positionY, Direction currentDirection)
         {
