@@ -8,10 +8,9 @@
 
         <PublishSingleFile>true</PublishSingleFile>
         <SelfContained>true</SelfContained>
-        <UseAppHost>true</UseAppHost>
-        <IncludeAllContentForSelfExtract>false</IncludeAllContentForSelfExtract>
         <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
-        <PublishTrimmed>true</PublishTrimmed>
+        <IncludeNativeLibrariesForSelfExtract>false</IncludeNativeLibrariesForSelfExtract>
+        <UseAppHost>true</UseAppHost>
 
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>

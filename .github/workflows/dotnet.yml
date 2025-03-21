@@ -34,11 +34,10 @@ jobs:
     - name: Publish executable
       run: dotnet publish MarsRover/MarsRover.csproj -c Release -r win-x64 --self-contained true \
        -p:PublishSingleFile=true \
-       -p:EnableCompressionInSingleFile=true \
        -p:IncludeNativeLibrariesForSelfExtract=false \
-       -p:PublishTrimmed=true \
-       -p:TrimMode=Full \
-       -p:EnableReadyToRun=false \
+       -p:EnableCompressionInSingleFile=true \
+       -p:PublishTrimmed=false \
+       -p:UseAppHost=true \
        -o publish
 
     - name: Upload artifact
