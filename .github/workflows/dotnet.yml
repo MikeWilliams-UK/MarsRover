@@ -37,11 +37,15 @@ jobs:
 
     - name: List files
       run: |
-        ls -alR ${{ github.workspace }}
+        ls -al ${{ github.workspace }}
+
+    - name: List files
+      run: |
+        ls -al MarsRover/MarsRover/MarsRover/publish
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: mars-rover
-        path: publish/*
+        path: MarsRover/MarsRover/MarsRover/publish/*
         retention-days: 7
